@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payScreen</title>
+    <link rel="stylesheet" href="/src/main/resources/static/CSS/payScreen.css" type="text/css">
+    <link href="https://unpkg.com/ress/dist/ress.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <section class="grid1">
+        <div class="header">
+    
+            <h1 align="center">This is Header</h1>
+            
+            <div align="right">
+            
+                <th:block sec:authorize="isAnonymous()">
+                    <div>
+                        <input type="button" value="로그인" id="login">
+                    </div>
+                </th:block>
+    
+                <th:block sec:authorize="isAuthenticated()">
+                    <div>
+                        <h3><span sec:authentication="principal.nickname"></span>님의 방문을 환영합니다.</h3>
+                        <div>
+                            <input type="button" value="정보수정" id="updateMember">
+                            <input type="button" value="로그아웃" id="logout">
+                        </div>
+                    </div>
+                </th:block>
+            </div>
+        </div>
+    
+        <div>
+            <div>
+                <ul style="display:flex; list-style-type:none; justify-content:center;">
+                    <li style="padding-right:20px;"><a href="/">홈으로</a></li>
+                    <li style="padding-right:20px;"><a href="/board/list">게시판</a></li>
+                    <li style="padding-right:20px;"><a href="/thumbnail/list">사진게시판</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="item1">
+            <div data-v-a570d7c8="" data-v-67d79bfc="" class="reward-order-form" data-component-name="pageRewardOrderForm">
+                <div data-v-a570d7c8="" class="container">
+                    <div data-v-a570d7c8="" class="row">
+                        <div data-v-a570d7c8="" class="input col-lg-7">
+                            <div data-v-a570d7c8="" class="wrapper">
+                                <a data-v-a570d7c8="" href="/reward/13401" class="back font-sm pointer router-link-active" title="프로젝트 상세로 이동">
+                                    <img class="arrow" src="/src/main/resources/static/images/pay/arrow_left_icon.png">
+                                </a>
+                                <a data-v-a570d7c8="" href="/reward/13401" class="thumbnail img router-link-active" title="프로젝트 조회" style="background-image: url(&quot;https://ohmycompany.imgix.net/uploads/reward/img/2023/01/13401/REWARD_20230215094210845.jpg&quot;);">
+                                </a>
+                                <header data-v-a570d7c8="">
+                                    <a data-v-a570d7c8="" href="/reward/13401" class="title router-link-active" title="프로젝트 조회">
+                                        <span data-v-a570d7c8="">환절기 면역력 증진! 천안 고향사랑하우스 로컬꾸러미</span>
+                                    </a>
+                                    <div data-v-a570d7c8="" class="builder font-sm">
+                                        <span data-v-a570d7c8="">천안선순환센터</span>
+                                    </div>
+                                </header>
+                                <div data-v-a570d7c8="" class="parts">
+                                    <div data-v-a570d7c8="" class="part">
+                                        <div data-v-a570d7c8="" class="subject">
+                                            <span data-v-a570d7c8="">선택 리워드</span>
+                                        </div>
+                                        <div data-v-a570d7c8="" class="content">
+                                            <div data-v-a570d7c8="" class="amount clearfix">
+                                                <div data-v-a570d7c8="" class="price">
+                                                    <span data-v-a570d7c8="">참여 금액:</span>
+                                                    <b data-v-a570d7c8="" class="font-lg">30,000</b>
+                                                    <span data-v-a570d7c8="">원</span>
+                                                </div>
+                                                <div data-v-a570d7c8="" class="count">
+                                                    <label data-v-a570d7c8="" for="pageRewardOrderFormRewardItemCnt">수량: </label>
+                                                    <input data-v-a570d7c8="" id="pageRewardOrderFormRewardItemCnt" type="number" pattern="[0-9]*" inputmode="numeric" class="number form-control border-focus-point font-sm" data-component-name="componentNumber">
+                                                </div>
+                                            </div>
+                                            <div data-v-a570d7c8="" class="title font-sm">
+                                                <div data-v-a570d7c8="">새싹삼 20 뿌리 + 꿀스틱 5개 증정</div>
+                                            </div>
+                                            <!---->
+                                            <!---->
+                                        </div>
+                                    </div>
+                                    <div data-v-a570d7c8="" class="part">
+                                        <div data-v-a570d7c8="" class="subject">
+                                            <label data-v-a570d7c8="" for="pageRewardOrderFormAddAmt">추가 참여금</label>
+                                            <span data-v-a570d7c8="" class="desc">참여금을 추가로 후원할 수 있습니다(선택)</span>
+                                        </div>
+                                        <div data-v-a570d7c8="" class="content">
+                                            <input data-v-a570d7c8="" id="pageRewardOrderFormAddAmt" type="tel" pattern="[0-9]*" inputmode="numeric" autocomplete="off" placeholder="최소 1,000원 이상 입력해주세요." class="number form-control border-focus-point font-sm" data-component-name="componentNumber">
+                                        </div>
+                                    </div>
+                                    <!---->
+                                    <!---->
+                                    <div data-v-a570d7c8="" class="part cheer">
+                                        <div data-v-a570d7c8="" class="subject">
+                                            <label data-v-a570d7c8="" for="pageRewardOrderFormCheerMessage">응원 한마디</label>
+                                            <span data-v-a570d7c8="" class="desc">기재하지 않으시면 "응원합니다."로 노출됩니다.</span>
+                                        </div>
+                                        <div data-v-a570d7c8="" class="side font-xs form-check">
+                                            <input data-v-a570d7c8="" type="checkbox" id="pageRewardOrderFormCheckAnonymous" class="form-check-input">
+                                            <label data-v-a570d7c8="" for="pageRewardOrderFormCheckAnonymous" class="form-check-label">익명</label>
+                                        </div>
+                                        <div data-v-a570d7c8="" class="content">
+                                            <div data-v-a570d7c8="" class="input-group">
+                                                <div data-v-a570d7c8="" class="input-group-prepend">
+                                                    <span data-v-a570d7c8="" class="img profile" style="background-image: url(&quot;/assets/img/common.profile.default.svg&quot;);"></span>
+                                                </div>
+                                                <textarea data-v-a570d7c8="" id="pageRewardOrderFormCheerMessage" placeholder="ex) 응원합니다." class="border-focus-point form-control font-sm"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-v-a570d7c8="" class="part paid">
+                                        <div data-v-a570d7c8="" class="subject">
+                                            <label data-v-a570d7c8="" for="pageRewardOrderFormInvestorHp">
+                                                <span data-v-a570d7c8="" class="color-point">*</span>
+                                                <span data-v-a570d7c8=""> 결제자 연락처</span></label>
+                                            </div>
+                                            <div data-v-a570d7c8="" class="content">
+                                                <div data-v-a570d7c8="" class="form-group mb-0">
+                                                    <input data-v-36cfb067="" data-v-a570d7c8="" id="pageRewardOrderFormInvestorHp" type="tel" placeholder="ex) 01012345678" maxlength="11" class="phone form-control border-focus-point font-sm" data-component-name="componentPhone"></div></div></div><div data-v-a570d7c8="" class="part receive"><div data-v-a570d7c8="" class="subject"><label data-v-a570d7c8="" for="pageRewardOrderFormReceiveName">리워드 수령 정보</label></div><div data-v-a570d7c8="" class="side clearfix">
+                                                        <button data-v-a570d7c8="" class="btn btn-default font-xs">배송지 목록</button><div data-v-a570d7c8="" class="font-xs">
+                                                            <input data-v-a570d7c8="" type="checkbox" id="pageRewardOrderFormChkDefaultAddress" class="form-check-input">
+                                                            <label data-v-a570d7c8="" for="pageRewardOrderFormChkDefaultAddress" class="form-check-label">기본 배송지로</label>
+                                                        </div>
+                                                    </div>
+                                                    <div data-v-a570d7c8="" class="content">
+                                                        <div data-v-a570d7c8="" class="row">
+                                                            <div data-v-a570d7c8="" class="form-group col-md-6">
+                                                                <label data-v-a570d7c8="" for="pageRewardOrderFormReceiveName" class="subject font-sm">
+                                                                    <span data-v-a570d7c8="" class="color-point">*</span><span data-v-a570d7c8=""> 이름</span>
+                                                                </label>
+                                                                <input data-v-a570d7c8="" type="text" id="pageRewardOrderFormReceiveName" placeholder="ex) 오마이" class="form-control border-focus-point font-sm">
+                                                            </div>
+                                                            <div data-v-a570d7c8="" class="form-group col-md-6 hp">
+                                                                <label data-v-a570d7c8="" for="pageRewardOrderFormHp" class="subject font-sm">
+                                                                    <span data-v-a570d7c8="" class="color-point">*</span>
+                                                                    <span data-v-a570d7c8=""> 휴대전화</span>
+                                                                </label>
+                                                                <input data-v-36cfb067="" data-v-a570d7c8="" id="pageRewardOrderFormHp" type="tel" placeholder="ex) 01012345678" maxlength="11" class="phone form-control border-focus-point font-sm" data-component-name="componentPhone">
+                                                            </div>
+                                                        </div>
+                                                        <div data-v-a570d7c8="" class="row">
+                                                            <div data-v-a570d7c8="" class="form-group col-md-6">
+                                                                <label data-v-a570d7c8="" for="pageRewardOrderFormAddressName" class="subject font-sm">
+                                                                    <span data-v-a570d7c8="" class="color-point">*</span>
+                                                                    <span data-v-a570d7c8=""> 배송지명</span>
+                                                                </label>
+                                                                <select data-v-a570d7c8="" id="pageRewardOrderFormAddressName" class="font-sm border-focus-point form-control">
+                                                                    <option data-v-a570d7c8="" value="집">집</option>
+                                                                    <option data-v-a570d7c8="" value="회사">회사</option>
+                                                                    <option data-v-a570d7c8="" value="가족">가족</option>
+                                                                    <option data-v-a570d7c8="" value="친구">친구</option>
+                                                                    <option data-v-a570d7c8="" value="직접 입력">직접 입력</option>
+                                                                </select><!---->
+                                                            </div>
+                                                            <div data-v-a570d7c8="" class="form-group col-md-6 memo">
+                                                                <label data-v-a570d7c8="" for="pageRewardOrderFormMemo" class="subject font-sm">
+                                                                    <span data-v-a570d7c8="">배송 메모</span>
+                                                                </label>
+                                                                <select data-v-a570d7c8="" id="pageRewardOrderFormMemo" class="font-sm border-focus-point form-control">
+                                                                    <option data-v-a570d7c8="" value="배송 전 미리 연락주세요.">배송 전 미리 연락주세요.</option>
+                                                                    <option data-v-a570d7c8="" value="부재 시 문 앞에 놓아주세요.">부재 시 문 앞에 놓아주세요.</option>
+                                                                    <option data-v-a570d7c8="" value="부재 시 경비실에 맡겨 주세요.">부재 시 경비실에 맡겨 주세요.</option>
+                                                                    <option data-v-a570d7c8="" value="부재 시 전화나 문자 남겨 주세요.">부재 시 전화나 문자 남겨 주세요.</option>
+                                                                    <option data-v-a570d7c8="" value="직접 입력">직접 입력</option>
+                                                                </select><!---->
+                                                            </div>
+                                                        </div>
+                                                        <div data-v-a570d7c8="" class="form-group">
+                                                            <div data-v-a570d7c8="" class="relative">
+                                                                <label data-v-a570d7c8="" for="pageRewardOrderFormAddress" class="subject font-sm">
+                                                                    <span data-v-a570d7c8="" class="color-point">*</span>
+                                                                    <span data-v-a570d7c8=""> 주소</span>
+                                                                </label>
+                                                                <div data-v-035eb03b="" data-v-a570d7c8="" class="address" data-component-name="componentAddress">
+                                                                    <button data-v-035eb03b="" id="pageRewardOrderFormAddress" class="btn btn-default border-focus-point btn-block font-sm">주소를 검색하시려면 이곳을 클릭하세요.</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                                <div data-v-a570d7c8="" class="part payment">
+                                                    <div data-v-a570d7c8="" class="subject">
+                                                        <span data-v-a570d7c8="">결제 수단</span>
+                                                    <!---->
+                                                    </div>
+                                                    <div data-v-a570d7c8="" class="content">
+                                                        <ul data-v-a570d7c8="" class="tight no-scrollbar">
+                                                            <li data-v-a570d7c8="" data-pay="naverpay" class="active">
+                                                                <button data-v-a570d7c8="" class="btn">
+                                                                    <span data-v-a570d7c8="">
+                                                                        <span data-v-a570d7c8="" class="img" style="background-image: url(&quot;/assets/ico/page.order.reward.naverpay.active.svg&quot;);"></span>
+                                                                        <span data-v-a570d7c8="" class="img off" style="background-image: url(&quot;/assets/ico/page.order.reward.naverpay.svg&quot;);"></span>
+                                                                    </span>
+                                                                    <div data-v-a570d7c8="" class="font-sm">네이버페이</div>
+                                                                </button>
+                                                            </li>
+                                                            <li data-v-a570d7c8="" data-pay="card" class="">
+                                                                <button data-v-a570d7c8="" class="btn">
+                                                                    <span data-v-a570d7c8="">
+                                                                        <span data-v-a570d7c8="" class="img" style="background-image: url(&quot;/assets/ico/page.order.reward.card.active.svg&quot;);"></span>
+                                                                        <span data-v-a570d7c8="" class="img off" style="background-image: url(&quot;/assets/ico/page.order.reward.card.svg&quot;);"></span>
+                                                                    </span>
+                                                                    <div data-v-a570d7c8="" class="font-sm">카드</div>
+                                                                </button>
+                                                            </li>
+                                                            <li data-v-a570d7c8="" data-pay="real" class="">
+                                                                <button data-v-a570d7c8="" class="btn">
+                                                                    <span data-v-a570d7c8=""><span data-v-a570d7c8="" class="img" style="background-image: url(&quot;/assets/ico/page.order.reward.real.active.svg&quot;);"></span>
+                                                                    <span data-v-a570d7c8="" class="img off" style="background-image: url(&quot;/assets/ico/page.order.reward.real.svg&quot;);"></span>
+                                                                </span>
+                                                                <div data-v-a570d7c8="" class="font-sm">계좌이체</div>
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <!---->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-v-a570d7c8="" class="pay col-lg-5">
+                                    <div data-v-a570d7c8="" class="wrapper">
+                                        <div data-v-a570d7c8="" class="outer">
+                                            <div data-v-a570d7c8="" class="inner">
+                                                <div data-v-a570d7c8="" class="details">
+                                                    <table data-v-a570d7c8="" class="table">
+                                                        <tbody data-v-a570d7c8="">
+                                                            <tr data-v-a570d7c8="">
+                                                                <th data-v-a570d7c8="">
+                                                                    <span data-v-a570d7c8="">후원금</span>
+                                                                </th>
+                                                                <td data-v-a570d7c8="">
+                                                                    <span data-v-a570d7c8="">30,000원</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr data-v-a570d7c8="">
+                                                                <th data-v-a570d7c8="">
+                                                                    <span data-v-a570d7c8="">배송비</span>
+                                                                </th>
+                                                                <td data-v-a570d7c8="">
+                                                                    <span data-v-a570d7c8="">3,000원</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div data-v-a570d7c8="" class="subject clearfix">
+                                                    <span data-v-a570d7c8="" class="float-left">최종 금액</span>
+                                                    <span data-v-a570d7c8="" class="float-right"><b data-v-a570d7c8="" class="color-point">33,000</b>
+                                                        <span data-v-a570d7c8="" class="color-point">원</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div data-v-a570d7c8="" class="guide font-sm">
+                                                <p data-v-a570d7c8="">목표액 1,000,000원에 미달하여도 진행되는 프로젝트입니다. 결제는 프로젝트 후원 시 바로 진행됩니다.</p>
+                                                <p data-v-a570d7c8="" class="keep-all">오마이컴퍼니는 플랫폼을 제공하는 중개자로 리워드 제공에 관한 지연, 제품의 하자 등으로 인한 일체의 법적 책임은 프로젝트 진행자에게 있습니다. 하지만 오마이컴퍼니는 진행자와 후원자간의 원활한 의사소통을 위해 최선의 노력을 다하겠습니다.</p>
+                                                <div data-v-a570d7c8="" class="form-check">
+                                                    <div data-v-a570d7c8="">
+                                                        <input data-v-a570d7c8="" type="checkbox" id="pageRewardOrderFormCheck1" class="form-check-input">
+                                                        <label data-v-a570d7c8="" for="pageRewardOrderFormCheck1" class="form-check-label">개인정보 제3자 제공 동의</label>
+                                                        <a data-v-a570d7c8="" class="pointer-u float-right">내용 보기</a>
+                                                    </div>
+                                                </div>
+                                                <div data-v-a570d7c8="" class="form-check">
+                                                    <div data-v-a570d7c8="">
+                                                        <input data-v-a570d7c8="" type="checkbox" id="pageRewardOrderFormCheck2" class="form-check-input">
+                                                        <label data-v-a570d7c8="" for="pageRewardOrderFormCheck2" class="form-check-label">펀딩 결제 시 유의사항 확인</label>
+                                                        <a data-v-a570d7c8="" class="pointer-u float-right">내용 보기</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-v-a570d7c8="" class="action">
+                                            <button data-v-a570d7c8="" class="btn btn-block btn-point font-lg">
+                                                <span data-v-a570d7c8="">후원하기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+        </div>
+
+    </section>
+</body>
+</html>
