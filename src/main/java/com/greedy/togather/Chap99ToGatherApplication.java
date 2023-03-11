@@ -1,4 +1,4 @@
-package com.greedy.togather.config;
+package com.greedy.togather;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
