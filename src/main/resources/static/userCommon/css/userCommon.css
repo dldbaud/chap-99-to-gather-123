@@ -169,5 +169,49 @@ body {
     cursor: pointer;
 }
 
+/* --------------------------------------------------------------------------- */
+
+/* footer */
+#footer {
+    background-color: rgb(255, 255, 255);
+    width: 100vw;
+    border-top: 1px solid #DEDCDC;
+}
+
+#wrap {
+    margin-left: 70px;
+    height: 45px;
+    width: 1300px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #DEDCDC;
+}
+
+#guides {
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.guide {
+    margin: 10px 30px;
+    font-size: 20px;
+}
+
+.guide:hover {
+    color: #81AE64;
+    cursor: pointer;
+}
+
+#footer-logo {
+    margin: 20px 40px;
+    margin-left: 70px;
+    height: 70px;
+}
+
+#texts {
+    margin-top: 0px;
+    margin-left: 70px;
+    line-height: 35px;
+}
 
 
