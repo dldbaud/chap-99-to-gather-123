@@ -10,7 +10,8 @@ html {
 
 body {
     margin: 0; /* header를 화면에 여백없이 설정하기 위해 */
-    max-width: 1100px;
+    overflow-x: hidden; /* 가로 스크롤바 숨기기 */
+    overflow-y: auto;
 }
 
 #header {
@@ -176,9 +177,10 @@ body {
     background-color: rgb(255, 255, 255);
     width: 100vw;
     border-top: 1px solid #DEDCDC;
+    padding-bottom: 60px;
 }
 
-#wrap {
+#wrapper {
     margin-left: 70px;
     height: 45px;
     width: 1300px;

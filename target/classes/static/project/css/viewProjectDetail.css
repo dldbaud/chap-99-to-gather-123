@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+body {
+    margin: 0px;
+}
+
+#header {
+    width: 100vw;
+    height: 90px;
+    background-color: rgb(246, 255, 241);
+}
+
+.wrapper { /* 모든 wrapper들은 해당 width를 가지고, 화면을 줄여도 위치를 가운데로 유지 */
+    max-width: 1100px;
+    margin: 0 auto; 
+}
