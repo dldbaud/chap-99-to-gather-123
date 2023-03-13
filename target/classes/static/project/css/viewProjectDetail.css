@@ -7,18 +7,8 @@ html {
     font-size: 100%;
 }
 
-body {
-    margin: 0px;
-}
-
-#header {
-    width: 100vw;
-    height: 90px;
-    background-color: rgb(246, 255, 241);
-    margin-bottom: 50px; /* wrapper와의 gap*/
-}
-
 .wrapper { /* 모든 wrapper들은 해당 width를 가지고, 화면을 줄여도 위치를 가운데로 유지 */
+    padding-top: 120px; /* header와의 gap */
     max-width: 1100px;
     margin: 0 auto; 
     display: grid;
@@ -285,13 +275,15 @@ pre {
 }
 
 .rewards {
-    width: auto;
+    width: 300px;
     height: auto;
     padding: 5px 25px 25px;
     border-radius: 30px;
     border: 3px solid #DEDCDC;
     box-shadow: 5px 5px 5px #eee;
+    margin: 0 auto;
     margin-bottom: 30px;
+
 }
 
 .reward-header {
@@ -303,7 +295,8 @@ pre {
 }
 
 .reward-title {
-    font-size: 30px;
+    font-size: 27px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
@@ -314,24 +307,24 @@ pre {
 #supporters {
     border-radius: 10px;
     background-color: #FFF4C9;
-    padding: 5px 20px;
-    font-size: 20px;
+    padding: 5px 15px;
+    font-size: 18px;
     color: #709053;
     margin-bottom: -20px;
 }
 
 #reward-name {
     margin: 20px 0px 5px 0px;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 500;
-    line-height: 45px;
+    line-height: 35px;
 }
 
 #reward-content {
     background-color: #F4F4F4;
     padding: 1px 20px;
     border-radius: 20px;
-    font-size: 23px;
+    font-size: 20px;
     margin-bottom: 5px;
 }
 
@@ -343,16 +336,16 @@ pre {
 }
 
 #expected {
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .funding-button {
     padding: 5px 30px;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Do Hyeon', sans-serif;
     background-color: #81AE64;
     color: #ffffff;
-    border: 5px solid #81AE64;
+    border: 4px solid #81AE64;
     border-radius: 20px;
 }
 
@@ -380,16 +373,176 @@ pre {
     color: #709053;
 }
 
-.flex {
-    display: flex;
-    
+#comment-body {
+    padding-bottom: 5%;
+    border-bottom: 2px solid #DEDCDC;
 }
 
+#comment-container {
+    display: flex;
+    align-items: center;
+}
 
+#commenter {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 30px;
+}
 
+#comment-box {
+    resize: none; /* 텍스트 박스 크기 고정 */
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: 1px; /* 자간 */
+    font-weight: 100;
+    font-size: 17px;
+    padding: 2%;
+    background-color: #FAFAFA;
+    border: none;
+    border-radius: 20px;
+    width: 79%;
+    height: 70px;
+}
 
-#footer {
-    width: 100vw;
-    height: 400px;
-    background-color: rgb(246, 255, 241);
+#comment-box:focus {
+    outline: none;
+}
+
+#mini-container {
+    display: flex;
+    align-items: center;
+    margin: -3% 17%;
+    width: 85%;
+}
+
+#count-content {
+    bottom: 10%;
+    font-size: 20px;
+    text-align: right;
+    margin-top: 20px;
+    color: #81AE64;
+    margin-left: 370px; /* default와의 gap */
+    width: 70px;
+}
+
+#regist-comment {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1.4rem;
+    color: white;
+    background-color: #81AE64;
+    border-radius: 17px;
+    padding: 7px 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: none;
+}
+
+#regist-comment:hover {
+    background-color: #C7E78B;
+    cursor: pointer;
+}
+
+#comments-count {
+    font-size: 30px;
+    padding: 15px;
+}
+
+#total-count {
+    color: #709053;
+}
+
+#flex1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -40px;
+}
+
+#flex2 {
+    display: flex;
+    align-items: center;
+    margin-left: 170px;
+}
+
+#user-id {
+    font-size: 23px;
+    border-bottom: 3px solid #709053;
+}
+
+#gift {
+    color : #709053;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#regist-date {
+    margin-right: 20px;
+}
+
+#flex3 {
+    display: flex;
+    align-items: center;
+}
+
+#profiles {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    margin: 30px;
+}
+
+#comment {
+    resize: none; /* 텍스트 박스 크기 고정 */
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: 100;
+    font-size: 17px;
+    padding: 20%;
+    background-color: #FAFAFA;
+    border: none;
+    border-radius: 20px;
+    width: 500%;
+    height: 30px;
+    outline: none;
+}
+
+/* 스크롤바 설정 */
+#comment::-webkit-scrollbar,
+#comment-box::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* 스크롤바 막대 설정 */
+#comment::-webkit-scrollbar-thumb,
+#comment-box::-webkit-scrollbar-thumb {
+    background-color: #DEDCDC;
+    /* 스크롤바 둥글게 설정 */
+    border-radius: 10px;    
+}
+
+/* 스크롤바 뒷 배경 설정 */
+#comment::-webkit-scrollbar-track,
+#comment-box::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0); /* 투명 */
+}
+
+/* 댓글 페이징 바 */
+#paging-bar {
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: 900;
+    display: flex;
+    padding-top: 50px;
+    justify-content: center; /* 화면 가운데로 */
+}
+
+.move {
+    padding: 20px;
+    font-size: 20px;
+    background-color: white;
+    color: #DEDCDC;
+    border: none;
+    cursor: pointer;
+}
+
+.move:hover {
+    color : #709053;
 }

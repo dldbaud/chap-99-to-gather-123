@@ -11,9 +11,6 @@
     <title>viewProjectDetail</title>
 </head>
 <body>
-    <!-- header 영역 확보 -->
-    <div id="header"></div>
-
     <div class="wrapper">
         <!-- 대표 사진 -->
         <div class="image">
@@ -147,28 +144,77 @@
 
         <!-- 댓글 -->
         <div class="comment">
-            <div id="comment-title">To-Gather 지원 댓글 기부금 <span id="donation">10,500</span>원</div>
+            <div id="comment-title">총 댓글 기부금 <span id="donation">10,500</span>원</div>
             <div id="comment-body">
-                <div class="flex">
+                <div id="comment-container">
                     <img src="/src/main/resources/static/project/images/profile1.png" id="commenter">
-                    <div id="comment-box" placeholder="댓글 작성 및 주변에게 이 프로젝트를 공유해주시면,  To-Gather가 대신 기부합니다 :)<br>
-                    To-Gather와 함께 해요 !"></div>
+                    <textarea id="comment-box" maxlength="500" placeholder="따뜻한 댓글을 작성해주세요! To-Gather가 기부금을 지원합니다 :)"></textarea>
                 </div>
-                <div class="flex">
-                <p>내용을 작성하지 않으실 경우, '응원 합니다 !'로 등록됩니다.</p>
+                <div id="mini-container">
+                    <p>내용을 작성하지 않으실 경우, '응원 합니다!'로 등록됩니다.</p>
+                    <p id="count-content"><span id="counter">0</span>/500</p>
+                    <button type="button" id="regist-comment">등록</button>
+                </div>
+                <script>
+                    /* 댓글 textarea 글자 수 세기 */
+                    $('#comment-box').keyup(function (e) {
+                        let content = $(this).val();
+                        $('#counter').text(content.length);
+                        
+                        // 글자수 제한
+                        if (content.length > 500) {
+                            alert('댓글은 500자까지 입력 가능합니다 :)');
+                        };
+                    });
+                </script>
+            </div>
+            <div id="comments-count">댓글 <span id="total-count">43</span>개</div>
+            <div id="comment-list">
+                <div id="flex1">
+                    <div id="flex2">
+                    <p id="user-id">greedy123</p>
+                    <p id="gift">✨100원</p>
+                    </div>
+                    <p id="regist-date">2023년 2월 25일</p>
+                </div>
+                <div id="flex3">
+                    <img src="/src/main/resources/static/project/images/profile2.png" id="profiles">
+                    <div>
+                        <textarea id="comment" readonly>응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!응원 합니다!!!</textarea>
+                    </div>
                 </div>
             </div>
-            <div id="comments-count">댓글<span id="count">43</span>개</div>
-            <div>
-                <img src="/src/main/resources/static/project/images/profile2.png" id="profiles">
-                <div id="comment">응원 합니다!!!</div>
+            <div id="comment-list">
+                <div id="flex1">
+                    <div id="flex2">
+                    <p id="user-id">imYourJoy</p>
+                    <p id="gift"></p>
+                    </div>
+                    <p id="regist-date">2023년 2월 24일</p>
+                </div>
+                <div id="flex3">
+                    <img src="/src/main/resources/static/project/images/profile3.png" id="profiles">
+                    <div>
+                        <textarea id="comment" readonly>응원 합니다!!!응원 합니다!!!</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 댓글 페이징 바 -->
+            <div id="paging-bar">
+                <!-- 이전 페이지로 이동 -->
+                <button class="move">◀</button>
+
+                <!-- 숫자 버튼 -->
+                <div class="move">
+                    <button class="move">1</button><button class="move">2</button><button class="move">3</button>
+                </div>
+
+                <!-- 다음 페이지로 이동 -->
+                <button class="move">▶</button>
             </div>
         </div>
-
     </div>
-
-    <!-- footer 영역 확보 -->
-    <div id="footer"></div>
 
     
 </body>
