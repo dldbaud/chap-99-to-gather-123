@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/src/main/resources/static/user/project/CSS/createProject.css">
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script type="text/javascript" src="/src/main/resources/static/user/project/js/createProject.js"></script> 
     <script src="/src/main/resources/static/user/project/js/jquery-3.6.3.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <title>writeMakerInfo</title>
 </head>
 <body>
@@ -57,25 +58,35 @@
                 </div>
                 
                 <div class="items">
-                    <div>
-                        <p class="title">* 이름</p>
-                        <input type="name" name="name" class="input">
-                    </div>
-                    <div>
-                        <p class="title">* 연락처</p>
-                        <input type="address" name="address" class="input">
-                    </div>
+                    <flex>
+                        <div>
+                            <p class="title">* 이름</p>
+                            <input type="name" name="name" class="input" maxlength="12" style="width:170px;">
+                        </div>
+                        <div>
+                            <p class="title">* 연락처</p>
+                            <input type="tel" name="phone" class="input" placeholder="'-'제외" maxlength="11" style="width:120px;">
+                        </div>
+                    </flex>
                     <div>
                         <p class="title">* 이메일</p>
-                        <input type="address" name="address" class="input">
+                        <input type="email" name="email" class="input" style="width:230px;">
                     </div>
                     <div>
                         <p class="title">* 주소</p>
-                        <input type="address" name="address" class="input">
+                        <input type="text" name="address1" id="address1" class="input" placeholder="주소를 검색하시려면 이 곳을 클릭하세요 :)" style="width:300px;" readonly>
                     </div>
                     <div>
-                        <p class="title">* 소개</p>
-                        <input type="address" name="address" class="input">
+                        <p class="title">* 우편번호</p>
+                        <input type="text" name="zipCode" id="zip-code" class="input" style="width:120px;" readonly>
+                    </div>
+                    <div>
+                        <p class="title">* 상세주소</p>
+                        <input type="text" name="address2" id="address2" class="input" style="width:500px;">
+                    </div>
+                    <div>
+                        <p class="title">* 간략 소개</p>
+                        <input type="address" name="address" class="input"  maxlength="16" style="width:250px;">
                     </div>
                 </div>
 
