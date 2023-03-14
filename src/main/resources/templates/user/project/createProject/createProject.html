@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/src/main/resources/static/user/project/CSS/createProject.css">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="/src/main/resources/static/user/project/js/createProject.js"></script> 
+    <script src="/src/main/resources/static/user/project/js/jquery-3.6.3.min.js"></script>
+    <title>writeMakerInfo</title>
+</head>
+<body>
+    <!-- 메이커 정보 -->
+    <div class="wrapper">
+        <!-- step 바 -->
+        <div class="steps">
+            <div class="step">
+                <span>step 1</span>
+                <p class="step-subject running"><a href="#one">Maker 정보</a></p>
+            </div>
+            <div class="step">
+                <span>step 2</span>
+                <p class="step-subject"><a href="#two">프로젝트 정보</a></p>
+            </div>
+            <div class="step">
+                <span>step 3</span>
+                <p class="step-subject"><a href="#three">스토리 기획</a></p>
+            </div>
+            <div class="step">
+                <span>step 4</span>
+                <p class="step-subject"><a href="#four">리워드 설계</a></p>
+            </div>
+            <div class="step">
+                <span>step 5</span>
+                <p class="step-subject"><a href="#five">리워드 안내</a></p>
+            </div>
+            <div class="step">
+                <span>step 6</span>
+                <p class="step-subject"><a href="#six">정산 확인</a></p>
+            </div>
+        </div>
+
+        <!-- form box -->
+        <form id="thumbnailRegistForm" action="/thumbnail/regist" method="post" enctype="multipart/form-data"> <!-- file을 보내는 인코딩 방식 -->
+            <!-- step 1. Maker 정보 -->
+            <div class="go" id="one"></div>
+            <p class="description">Maker의 정보를 입력해주세요 :)</p>
+            <div class="box one">
+                <!-- 프로필 사진 -->
+                <div id="profile-area">
+                    <div id="preview-area">
+                        <img src="/src/main/resources/static/user/project/images/profile4.png" id="preview-image">
+                    </div>
+                    <label for="real-file" class="plus"><img id="plus-image" src="/src/main/resources/static/user/project/images/plus.png"></label>
+                    <input type="file" id="real-file" name="attachProfile" accept="image/gif, image/jpeg, image/png">
+                </div>
+                
+                <div class="items">
+                    <div>
+                        <p class="title">* 이름</p>
+                        <input type="name" name="name" class="input">
+                    </div>
+                    <div>
+                        <p class="title">* 연락처</p>
+                        <input type="address" name="address" class="input">
+                    </div>
+                    <div>
+                        <p class="title">* 이메일</p>
+                        <input type="address" name="address" class="input">
+                    </div>
+                    <div>
+                        <p class="title">* 주소</p>
+                        <input type="address" name="address" class="input">
+                    </div>
+                    <div>
+                        <p class="title">* 소개</p>
+                        <input type="address" name="address" class="input">
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <!-- step 2. 프로젝트 정보 -->
+            <div class="go" id="two"></div>
+            <p class="description">프로젝트의 정보를 입력해주세요 :)</p>
+            <div class="box two">
+                
+                
+            </div>
+
+            <!-- step 3. 스토리 기획 -->
+            <div class="go" id="three"></div>
+            <p class="description">프로젝트의 스토리를 입력해주세요 :)</p>
+            <div class="box two">
+                
+                
+            </div>
+
+            <!-- step 4. 리워드 설계 -->
+            <div class="go" id="four"></div>
+            <p class="description">Supporter에게 지급하실 리워드를 등록해주세요 :)</p>
+            <div class="box two">
+                
+                
+            </div>
+
+            <!-- step 5. 리워드 안내-->
+            <div class="go" id="five"></div>
+            <p class="description">리워드 배송 및 환불 정책을 Maker님의 프로젝트 내용에 맞춰 입력해주세요 :)</p>
+            <div class="box two">
+                
+                
+            </div>
+
+            <!-- step 6. 정산 확인 -->
+            <div class="go" id="six"></div>
+            <p class="description">정산을 위한 서류를 첨부해주세요 :)</p>
+            <div class="box two">
+                
+                
+            </div>
+
+            
+
+            <button class="submit">프로젝트 최종 제출</button>
+        </form>
+        
+
+
+
+
+
+
+
+
+
+    </div>
+    
+</body>
+</html>
