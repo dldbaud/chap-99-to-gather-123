@@ -3,7 +3,9 @@ server:
   port: 8001
 
 
-  
+# mybatis config
+mybatis:
+  mapper-locations: mappers/**/*.xml
   
   
   
