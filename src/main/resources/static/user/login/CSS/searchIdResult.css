@@ -52,6 +52,7 @@ p {
     cursor: pointer;
     border-radius:15px;
     font-family: 'Do Hyeon', sans-serif;
+    box-shadow: 5px 5px 5px #eee;
 }
 
 .btn-searchId-result:hover {
