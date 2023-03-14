@@ -1,6 +1,13 @@
 
+.wrapper { 
+    padding-top: 120px; 
+    max-width: 1100px;
+}
+
 body {
     font-family: 'Do Hyeon', sans-serif;
+    font-weight: normal;
+    color: #535353;
 }
 
 p {
@@ -8,22 +15,32 @@ p {
     font-weight: normal;
 }
 .name {
-
-    border-radius:15px;
-    height: 25px;
-    font-family: 'Do Hyeon', sans-serif;
-    text-align: center;
-    width: 300px;
-    font-size: 18px;
+     
+ width: 300px;
+ height: 10px;
+ padding: 15px 25px 15px;
+ border-radius: 30px;
+ border: 3px solid #DEDCDC;
+ box-shadow: 5px 5px 5px #eee;
+ margin: 0 auto;
+ margin-bottom: 15px;
+ text-align: center;
+ font-size: 20px;
+ font-family: 'Do Hyeon', sans-serif;
 }
 
 .phone2 {
-    border-radius:15px;
-    height: 25px;
-    font-family: 'Do Hyeon', sans-serif;
-    text-align: center;
     width: 300px;
-    font-size: 18px;
+    height: 10px;
+    padding: 15px 25px 15px;
+    border-radius: 30px;
+    border: 3px solid #DEDCDC;
+    box-shadow: 5px 5px 5px #eee;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Do Hyeon', sans-serif;
 }
 
 
