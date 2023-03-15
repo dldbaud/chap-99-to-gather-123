@@ -10,6 +10,7 @@
     <!-- <link href="https://unpkg.com/ress/dist/ress.min.css" rel="stylesheet" type="text/css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="/src/main/resources/static/user/pay/js/payScreen.js"></script>
 </head>
 <body>
     <section id="grid1">
@@ -148,6 +149,7 @@
                                                                     <option  value="가족">가족</option>
                                                                     <option  value="친구">친구</option>
                                                                     <option  value="직접 입력">직접 입력</option>
+                                                                    <input type="text" id="selboxAddressName" class="rewoard-box rewoard-box3" name="selboxAddressName"/>
                                                                 </select><!---->
                                                             </div>
                                                             <div class="form-group col-md-6 memo">
@@ -162,9 +164,8 @@
                                                                     <option  value="부재 시 전화나 문자 남겨 주세요.">부재 시 전화나 문자 남겨 주세요.</option>
                                                                     <option  value="직접 입력">직접 입력</option>
                                                                 </select><!---->
+                                                                <input type="text" id="selboxMemo" class="rewoard-box rewoard-box3" name="selboxMemo"/>
                                                             </div>
-                                                            <input type="text" id="selboxAddressName" class="rewoard-box rewoard-box3" name="selboxAddressName"/>
-                                                            <input type="text" id="selboxMemo" class="rewoard-box rewoard-box3" name="selboxMemo"/>
                                                         </div>
                                                         <div id="data1" class="form-group">
                                                             <div  class="relative">
@@ -205,31 +206,31 @@
                                                                 }
                                                             /* 직접 입력*/
 
-                                                        //     $(function(){
-                                                        //         //직접입력 인풋박스 기존에는 숨어있다
-                                                        //     $("#selboxmemo").hide();
-                                                        //     $("#rewardOrderFormMemo").change(function() {
-                                                        //         //직접입력을 누를 때 나타남
-                                                        //         if($("#rewardOrderFormMemo").val() == "직접 입력") {
-                                                        //             $("#selboxMemo").show();
-                                                        //         }  else {
-                                                        //             $("#selboxMemo").hide();
-                                                        //         }
-                                                        //     }) 
-                                                        // });
+                                                            $(function(){
+                                                                //직접입력 인풋박스 기존에는 숨어있다
+                                                            $("#selboxmemo").hide();
+                                                            $("#rewardOrderFormMemo").change(function() {
+                                                                //직접입력을 누를 때 나타남
+                                                                if($("#rewardOrderFormMemo").val() == "직접 입력") {
+                                                                    $("#selboxMemo").show();
+                                                                }  else {
+                                                                    $("#selboxMemo").hide();
+                                                                }
+                                                            }) 
+                                                        });
                                                         
-                                                        // $(function(){
-                                                        //     //직접입력 인풋박스 기존에는 숨어있다가
-                                                        //     $("#selboxAddressName").hide();
-                                                        //     $("#rewardOrderFormAddressName").change(function() {
-                                                        //             //직접입력을 누를 때 나타남
-                                                        //         if($("#rewardOrderFormAddressName").val() == "직접 입력") {
-                                                        //             $("#selboxAddressName").show();
-                                                        //         }  else {
-                                                        //             $("#selboxAddressName").hide();
-                                                        //         }
-                                                        //     }) 
-                                                        //     });
+                                                        $(function(){
+                                                            //직접입력 인풋박스 기존에는 숨어있다가
+                                                            $("#selboxAddressName").hide();
+                                                            $("#rewardOrderFormAddressName").change(function() {
+                                                                    //직접입력을 누를 때 나타남
+                                                                if($("#rewardOrderFormAddressName").val() == "직접 입력") {
+                                                                    $("#selboxAddressName").show();
+                                                                }  else {
+                                                                    $("#selboxAddressName").hide();
+                                                                }
+                                                            }) 
+                                                            });
 
                                                         </script>
                                                         <!---->
@@ -347,7 +348,7 @@
                                         </div>
                                         <div  class="action">
                                             <button  class="btn-block btn-point font-lg">
-                                                <span >후원하기</span>
+                                                <span cla="b">후원하기</span>
                                             </button>
                                         </div>
                                     </div>

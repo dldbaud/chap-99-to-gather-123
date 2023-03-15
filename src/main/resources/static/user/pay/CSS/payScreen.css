@@ -183,19 +183,19 @@ span {
     height: 0px;
     border-right: 16px solid transparent;
     border-bottom: 10px solid #c7e78b;
-    border-left: 10px solid transparent;
+    border-left: 9px solid transparent;
     transform: rotate(40deg);
 }
 
 .color-point::before {
-    border-right: 15.5px solid transparent;
+    border-right: 13px solid transparent;
     border-bottom: 11px solid #c7e78b;
     border-left: 15.5px solid transparent;
     position: absolute;
     height: 0;
     width: 0;
     top: 0px;
-    left: -9px;
+    left: -8px;
     display: block;
     content: '';
     transform: rotate(69deg);
@@ -311,8 +311,8 @@ span {
 
 .btn-point {
     margin-top: 5%;
-    background-color: #26a485;
-    border-color: #26a485;
+    background-color: #81AE64;
+    border-color: #81AE64;
     color: #fff;
     width: 100%;
 }

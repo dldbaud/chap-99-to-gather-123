@@ -48,6 +48,8 @@ img {
 
 .text-foot {
     margin-top: 10%;
+    float: left;
+    margin-right: 10%;
 }
 
 .togather {
