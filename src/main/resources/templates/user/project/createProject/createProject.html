@@ -9,6 +9,9 @@
     <script type="text/javascript" src="/src/main/resources/static/user/project/js/createProject.js"></script> 
     <script src="/src/main/resources/static/user/project/js/jquery-3.6.3.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="/src/main/resources/static/user/project/js/summernote/summernote-lite.js"></script>
+    <script src="/src/main/resources/static/user/project/js/summernote/lang/summernote-ko-KR.js"></script>
+    <link rel="stylesheet" type="text/css" href="/src/main/resources/static/user/project/CSS//summernote/summernote-lite.css">
     <title>writeMakerInfo</title>
 </head>
 <body>
@@ -49,78 +52,211 @@
             <p class="description">Maker의 정보를 입력해주세요 :)</p>
             <div class="box one">
                 <!-- 프로필 사진 -->
-                <div id="profile-area">
-                    <div id="preview-area">
-                        <img src="/src/main/resources/static/user/project/images/profile4.png" id="preview-image">
-                    </div>
-                    <label for="real-file" class="plus"><img id="plus-image" src="/src/main/resources/static/user/project/images/plus.png"></label>
-                    <input type="file" id="real-file" name="attachProfile" accept="image/gif, image/jpeg, image/png">
-                </div>
-                
-                <div class="items">
-                    <flex>
-                        <div>
-                            <p class="title">* 이름</p>
-                            <input type="name" name="name" class="input" maxlength="12" style="width:170px;">
+                <flex>
+                    <div id="profile-area">
+                        <div id="preview-area">
+                            <img src="/src/main/resources/static/user/project/images/profile4.png" id="preview-image">
                         </div>
+                        <label for="attach-profile" class="plus"><img id="plus-image" src="/src/main/resources/static/user/project/images/plus.png"></label>
+                        <input type="file" id="attach-profile" name="attachProfile" accept="image/gif, image/jpeg, image/png">
+                    </div>
+                    
+                    <div class="items">
+                        <flex>
+                            <div>
+                                <p class="title">* 이름</p>
+                                <input type="name" name="name" class="input" maxlength="12" style="width:170px;">
+                            </div>
+                            <div>
+                                <p class="title">* 간략 소개</p>
+                                <input type="address" name="address" class="input"  maxlength="16" style="width:250px;">
+                            </div>
+                        </flex>
+                        <flex>
+                            <div>
+                                <p class="title">* 연락처</p>
+                                <input type="tel" name="phone" class="input" placeholder="'-'제외" maxlength="15" style="width:120px;">
+                            </div>
+                            <div>
+                                <p class="title">* 이메일</p>
+                                <input type="email" name="email" class="input" style="width:230px;">
+                            </div>
+                        </flex>
+                        <flex>
+                            <div>
+                                <p class="title">* 주소</p>
+                                <input type="text" name="address1" id="address1" class="input" placeholder="주소를 검색하시려면 이 곳을 클릭하세요 :)" style="width:320px;" readonly>
+                            </div>
+                            <div>
+                                <p class="title">* 우편번호</p>
+                                <input type="text" name="zipCode" id="zip-code" class="input" style="width:120px;" readonly>
+                            </div>
+                        </flex>
                         <div>
-                            <p class="title">* 연락처</p>
-                            <input type="tel" name="phone" class="input" placeholder="'-'제외" maxlength="11" style="width:120px;">
+                            <p class="title">* 상세주소</p>
+                            <input type="text" name="address2" id="address2" class="input" style="width:500px;">
                         </div>
-                    </flex>
-                    <div>
-                        <p class="title">* 이메일</p>
-                        <input type="email" name="email" class="input" style="width:230px;">
+                        
                     </div>
-                    <div>
-                        <p class="title">* 주소</p>
-                        <input type="text" name="address1" id="address1" class="input" placeholder="주소를 검색하시려면 이 곳을 클릭하세요 :)" style="width:300px;" readonly>
-                    </div>
-                    <div>
-                        <p class="title">* 우편번호</p>
-                        <input type="text" name="zipCode" id="zip-code" class="input" style="width:120px;" readonly>
-                    </div>
-                    <div>
-                        <p class="title">* 상세주소</p>
-                        <input type="text" name="address2" id="address2" class="input" style="width:500px;">
-                    </div>
-                    <div>
-                        <p class="title">* 간략 소개</p>
-                        <input type="address" name="address" class="input"  maxlength="16" style="width:250px;">
-                    </div>
-                </div>
-
-                
+                </flex>
             </div>
 
             <!-- step 2. 프로젝트 정보 -->
             <div class="go" id="two"></div>
             <p class="description">프로젝트의 정보를 입력해주세요 :)</p>
             <div class="box two">
-                
+                <div class="items">
+                    <flex>
+                        <div>
+                            <p class="title">* 펀딩 시작일</p>
+                            <input type="date" name="startFunding" class="input" style="width:180px;">
+                        </div>
+                        <div>
+                            <p class="title">* 펀딩 종료일</p>
+                            <input type="date" name="endFunding" class="input" style="width:180px;">
+                        </div>
+                        <div>
+                            <p class="title">* 펀딩 목표 금액</p>
+                            <input type="number" name="fundingGoal" id="funding-goal" class="input" placeholder="단위 : 원" style="width:180px;">
+                        </div>
+                    </flex>
+                    <flex>
+                        <div>
+                            <p class="title">* 프로젝트 분야</p>
+                            <select name="projectCategory" id="project-category" class="input" style="width:300px;">
+                                <option value="" disabled selected>분야 선택</option>
+                                <option value="education">교육 프로젝트</option>
+                                <option value="disaster">자연 재해 지원 프로젝트</option>
+                                <option value="environment">환경 보호 프로젝트</option>
+                                <option value="medical">의료 지원 프로젝트</option>
+                                <option value="organic">유기 동물 보호 프로젝트</option>
+                                <option value="wild">야생 동물 보존 프로젝트</option>
+                                <option value="pet">반려 동물 케어 프로젝트</option>
+                            </select>
+                        </div>
+                    </flex>
+                    <br><br>
+                    <div class="guide">
+                        - 펀딩 시작 및 종료일은 프로젝트 심사/승인 과정에서 조정될 수 있습니다. <br>
+                        - To-Gather가 채택하고 있는 <red>keep it all</red> 방식은 
+                        목표액을 달성하지 못 해도 Supporter에게 리워드를 <br>&nbsp;&nbsp; 제공하는 방식이며, 
+                          운영 수수료는 7% 입니다.
+                    </div>
+                </div>
                 
             </div>
 
             <!-- step 3. 스토리 기획 -->
             <div class="go" id="three"></div>
             <p class="description">프로젝트의 스토리를 입력해주세요 :)</p>
-            <div class="box two">
-                
+            <div class="box three">
+                <div class="items">
+                    <flex>
+                        <div>
+                            <p class="title">* 프로젝트 명</p>
+                            <input type="text" name="projectName" id="project-name" class="input" maxlength="16" style="width:300px;">
+                        </div>
+                        <div>
+                            <p class="title">* 프로젝트 간략 소개</p>
+                            <input type="text" name="projectIntro" id="project-intro" class="input" maxlength="20" style="width:380px;">
+                        </div>
+                    </flex>
+                    <flex class="bottom-solid">
+                        <div>
+                            <p class="title">* 프로젝트 대표 사진</p><br>
+                            <p class="gray-text">(권장 비율: 4:3 / 권장 크기: 600*450px / 형식: jpg, png / 최대 크기: 20MB)</p>
+                        </div>
+                        <label for="main-image" class="upload" id="upload-main-image">파일 올리기</label>
+                        <input type="file" id="main-image" name="mainImage" accept="image/jpg, image/png">
+                    </flex>
+                    <div class="for-icon">
+                        <input class="upload-name" id="main-name" value="파일을 업로드 해주세요 :)" readonly>
+                        <img src="/src/main/resources/static/user/project/images/file-icon.png" class="file-icon">
+                    </div>
+                    <script>
+                        /* 첨부 된 메인 사진 파일명을 보여주는 Jquery */
+                        $("#main-image").on('change',function(){
+                            let fileName = $("#main-image").val();
+                            $("#main-name").val(fileName);
+                            });
+                    </script>
+                    <div id="main-preview-area">
+                        <img id="main-preview-image">
+                    </div>
+                    <flex class="bottom-solid">
+                        <div>
+                            <p class="title">* 프로젝트 서브 사진</p><br>
+                            <p class="gray-text">(프로젝트 대표 사진과 함께 슬라이드 형식으로 노출되며, 총 4장 추가 가능)</p>
+                        </div>
+                        <label for="sub-image" class="upload" id="upload-sub-image">파일 올리기</label>
+                        <input type="file" id="sub-image" name="subImage" accept="image/jpg, image/png" multiple>
+                    </flex>
+                    <div class="for-icon">
+                        <input class="upload-name" id="sub-name" value="파일을 업로드 해주세요 :)" readonly>
+                        <img src="/src/main/resources/static/user/project/images/file-icon.png" class="file-icon">
+                    </div>
+                    <script>
+                        /* 첨부 된 서브 사진들의 파일명을 보여주는 Jquery */
+                        $("#sub-image").on('change',function(){
+                            let fileName = $("#sub-image").val();
+                            $("#sub-name").val(fileName);
+                            });
+                    </script>
+                    <br><br>
+
+                    <!-- 프로젝트 상세 소개 (summernote 에디터) -->
+                    <p class="title">* 프로젝트 상세 소개</p>
+                    <textarea id="summernote" name="editordata">
+                    </textarea>
+                    <script>
+                        $(document).ready(function() {
+                            //여기 아래 부분
+                            $('#summernote').summernote({
+                                height: 500,                 // 에디터 높이
+                                minHeight: 500,             // 최소 높이
+                                maxHeight: 500,             // 최대 높이
+                                focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
+                                lang: "ko-KR",					// 한글 설정
+                                placeholder: 'To-Gather와 함께 할 프로젝트를 소개해주세요! :)',
+                                
+                            });
+                        });
+                    </script>
+                    <br><br>
+                    <div class="guide">
+                        ✔ 프로젝트 소개 입력 방식은 아래 두 가지입니다.<br>
+                        &nbsp;&nbsp;- 블로그형 (이미지-글-이미지-글 형태)<br>
+                        &nbsp;&nbsp;- 웹페이지형 (하나의 이미지 형태, 자체 제작)<br>
+                        ✔ 문단과 문단 사이 간격이 넓습니다. 간격을 줄이시려면 shift + enter 를 사용해주세요.<br>
+                        ✔ 문장에 적용한 효과를 삭제하려면 해당 문장을 선택한 뒤 적용한 효과 버튼을 한번 더 눌러주세요.<br>
+                        ✔ 타 파일에서 문장을 복사, 붙여넣기 전에는 메모장 등에 한번 거쳐서 입력해주세요.<br>
+                        ✔ 최대 노출 가능한 이미지 가로 사이즈는 600px 입니다.<br>
+                        ✔ 권장 비율을 지키지 않았을 경우 이미지 일부가 잘린 채 노출되는 등 다르게 보일 수 있습니다.<br>
+                        ✔ 이미지 삽입을 통해 GIF 파일 입력이 가능합니다
+                    </div>
+                </div>
                 
             </div>
 
             <!-- step 4. 리워드 설계 -->
             <div class="go" id="four"></div>
             <p class="description">Supporter에게 지급하실 리워드를 등록해주세요 :)</p>
-            <div class="box two">
-                
+            <div class="box four">
+                <div class="items">
+                    <div>
+                        <p class="title">* 리워드 배송비</p>
+                        <input type="number" name="shippingfee" id="funding-goal" class="input" placeholder="단위 : 원" style="width:180px;">
+                    </div>
+                    
+
+                </div>
                 
             </div>
 
             <!-- step 5. 리워드 안내-->
             <div class="go" id="five"></div>
             <p class="description">리워드 배송 및 환불 정책을 Maker님의 프로젝트 내용에 맞춰 입력해주세요 :)</p>
-            <div class="box two">
+            <div class="box five">
                 
                 
             </div>
@@ -128,7 +264,7 @@
             <!-- step 6. 정산 확인 -->
             <div class="go" id="six"></div>
             <p class="description">정산을 위한 서류를 첨부해주세요 :)</p>
-            <div class="box two">
+            <div class="box six">
                 
                 
             </div>
